@@ -10,6 +10,9 @@ namespace :integrator do # rake integrator:
 
         # TODO: Leer posicion actual desde la BD
         contador = ContadorState.all.first
+        if contador.nil?
+            contador = ContadorState.new
+        end
         position = contador.position
 
         if position > 0
