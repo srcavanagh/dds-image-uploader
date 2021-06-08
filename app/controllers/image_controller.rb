@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class ImageController < ActionController::Base
 
     def names_array 
         names = []
