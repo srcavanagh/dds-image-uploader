@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
             download_to_tmp image
             obj = aws_obj image
             if !obj.exists?
-                filePath = "#{Rails.root}/tmp/#{image)}"
+                filePath = "#{Rails.root}/tmp/#{image}"
                 obj.upload_file(filePath, {acl: 'public-read'})
             end
             remote_url = obj.public_url
