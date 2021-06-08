@@ -1,6 +1,6 @@
 module Megahelper
 
-        def names_array 
+    def names_array 
         names = []
         Net::SFTP.start("#{ENV['SFTP_HO']}", "#{ENV['SFTP_US']}", :password => "#{ENV['SFTP_PA']}", :port => 2222) do |sftp|
             sftp.dir.foreach("/imagenes") do |entry|
