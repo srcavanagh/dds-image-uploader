@@ -7,6 +7,7 @@ module Megahelper
                 names << entry.name
             end
         end
+        names.sort!
         return names
     end
 
