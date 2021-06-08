@@ -6,7 +6,7 @@
 namespace :integrator do # rake integrator:
     # ... tasks
     task :process => :environment do # rake integrator:process
-        include Megahelper
+        include MegaHelper
 
         # TODO: Leer posicion actual desde la BD
         contador = ContadorState.all.first
