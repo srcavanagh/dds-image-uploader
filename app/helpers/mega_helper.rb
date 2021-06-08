@@ -1,4 +1,4 @@
-module Megahelper
+module MegaHelper
 
     def names_array 
         names = []
