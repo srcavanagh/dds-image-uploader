@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    def  names_array 
+    def names_array 
         names = []
         Net::SFTP.start("#{ENV['SFTP_HO']}", "#{ENV['SFTP_US']}", :password => "#{ENV['SFTP_PA']}", :port => 2222) do |sftp|
             sftp.dir.foreach("/Testing") do |entry|
@@ -20,7 +20,8 @@ class ApplicationController < ActionController::Base
                 obj.upload_file(filePath, {acl: 'public-read'})
             end
             remote_url = obj.public_url
-            @result = {path: remote_url}
+            #@result = {path: remote_url}
+            puts remote_url
         end
     end
 
