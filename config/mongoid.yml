@@ -1,0 +1,32 @@
+development:
+  clients:
+    default:
+      uri: <%= ENV['ATLAS_URL'] %>
+      options:
+        max_retries: 30
+        retry_interval: 1
+        timeout: 15
+        max_pool_size: 20
+  options:
+    raise_not_found_error: false
+test:
+  clients:
+    default:
+      database: ultra_test
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: primary
+        max_pool_size: 1
+production:
+  clients:
+    default:
+      uri: <%= ENV['ATLAS_URL'] %>
+      options:
+        max_retries: 30
+        retry_interval: 1
+        timeout: 15
+        max_pool_size: 20
+  options:
+    raise_not_found_error: false
